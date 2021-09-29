@@ -1,0 +1,20 @@
+{"portfolio":[    
+    {
+    	"ticker": "CMRE", 
+        "datePurchased": "2011-01-01",
+        "dateSold":"2019-12-19", 
+        "quantity":"4" 
+    },
+    {
+    	"ticker": "MG", 
+        "datePurchased": "2015-01-01",
+        "dateSold":"2019-12-19", 
+        "quantity":"5" 
+    },
+    {
+    	"ticker": "SVXY", 
+        "datePurchased": "2012-01-01",
+        "dateSold":"2017-01-01", 
+        "quantity":"2" 
+    }
+]}

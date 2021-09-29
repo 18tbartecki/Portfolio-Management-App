@@ -1,0 +1,55 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Project2</display-name>
+  <servlet>
+  	<servlet-name>retrieveStocksServlet</servlet-name>
+  	<servlet-class>csci310.servlets.retrieveStocksServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>addStockServlet</servlet-name>
+  	<servlet-class>csci310.servlets.addStockServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<servlet-class>csci310.servlets.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SignUpServlet</servlet-name>
+  	<servlet-class>csci310.servlets.SignUpServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>viewStocksServlet</servlet-name>
+  	<servlet-class>csci310.servlets.viewStocksServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>deleteStockServlet</servlet-name>
+  	<servlet-class>csci310.servlets.deleteStockServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>retrieveStocksServlet</servlet-name>
+  	<url-pattern>/retrieveStocksServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>addStockServlet</servlet-name>
+  	<url-pattern>/addStockServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SignUpServlet</servlet-name>
+  	<url-pattern>/SignUpServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>viewStocksServlet</servlet-name>
+  	<url-pattern>/viewStocksServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>deleteStockServlet</servlet-name>
+  	<url-pattern>/deleteStockServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

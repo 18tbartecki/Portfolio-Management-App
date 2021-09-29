@@ -1,0 +1,12 @@
+body{
+	margin: 0;
+}
+
+.banner{
+	background-color: #787878;
+	width: 100%;
+}
+
+#errorMessage {
+	display: none;
+}

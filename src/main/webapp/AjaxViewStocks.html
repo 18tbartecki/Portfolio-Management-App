@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>  
+      <title>Document</title>
+</head>
+<script>
+    function showSubmissionMessage(){
+        document.getElementById("message").innerHTML = "Added Successfully";
+        document.getElementById("message").style = "color:green";
+    }
+    function checkAddSubmission() {
+    	console.log("In function");
+		$.ajax({
+			url: "viewStocksServlet",
+			data: {
+				formType:"view",
+				ticker: document.getElementById("ticker").value,
+			    quantity: document.getElementById("quantity").value,
+			    dateSold: document.getElementById("start-date").value,
+                datePurchased: document.getElementById("end-date").value
+			},
+			success: function(result) {
+				if (result == "Added to Graph"){
+					document.getElementById("message-viewStocks").innerHTML = "Added to Graph";
+			        document.getElementById("message-viewStocks").style = "color:green";
+				}
+				else {
+					document.getElementById("message-viewStocks").innerHTML = result;
+			        document.getElementById("message-viewStocks").style = "color:red";
+				}
+			}
+		})
+	}
+    
+</script>
+<body>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    View A  Stock
+  </button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class = "customNav">View a Stock</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form class = "col-lg-6 well paddingLeft" onsubmit="checkAddSubmission(); return false; ">
+                <medium id="message-viewStocks"> </medium>
+
+                <div class="form group">
+                    <label for="tickerL" class ="customNav">Ticker</label>
+                    <input type = "username" id = "ticker" class = "form-control" name="ticker" required>
+                    <br>
+                </div>
+                    <div class="form-group">
+                        <label for="quantityL" class ="customNav">Quantity</label>
+                        <input type = "number" id = "quantity" class = "form-control" name="quantity" required>
+                </div>
+                <div class="form group">
+                        <label for="purchasedL" class ="customNav">End Date</label>
+                        <input type = "date" id = "end-date" class = "form-control" name="datePurchased" required>
+                        <br>
+                </div>
+                <div class="form group">
+                        <label for="soldL" class ="customNav">Start Date</label>
+                        <input type = "date" id = "start-date" class = "form-control" name="dateSold" required>
+                        <br>
+                </div>
+                <button type="submit" class="btn btn-success">View</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
